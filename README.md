@@ -1,2 +1,2 @@
-# Data_Structures
-This repository contains examples of data structures over many programming languages.
+# Veri Yapıları
+Yakında bu depo içerisinde birçok programlama dili ile farklı tiplerdeki veri yapıları paylaşılacaktır.
