@@ -1,4 +1,4 @@
-public class LinkedList<T> {
+public class LinkList<T> {
     Node head;
 
     public void push(T data){
@@ -21,6 +21,23 @@ public class LinkedList<T> {
                 tempNode = tempNode.next;
             }
             tempNode.next = newNode;
+        }
+    }
+
+    public T pop(){
+        if(this.head.next != null){
+            Node tempNode = this.head;
+            while (tempNode.next.next != null){
+                tempNode = tempNode.next;
+            }
+            T data = (T)tempNode.next.data;
+            tempNode.next = null;
+            return data;
+        }
+        else {
+            T data = (T) this.head.data;
+            this.head = null;
+            return data;
         }
     }
 
