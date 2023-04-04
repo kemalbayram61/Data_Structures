@@ -34,6 +34,26 @@ public class BinaryTree <T>{
         return nodeList;
     }
 
+    public List<Node> getBFS(Node rootNode){
+        List<Node> nodeList = new ArrayList<>();
+        if(rootNode!= null){
+            List<Node> layerNodes    = new ArrayList<>();
+            List<Node> subLayerNodes = new ArrayList<>();
+            layerNodes.add(rootNode);
+            while (layerNodes.size() > 0){
+                for(Node node : layerNodes){
+                    nodeList.add(node);
+                    if(node.getLeft() != null) subLayerNodes.add(node.getLeft());
+                    if(node.getRight() != null) subLayerNodes.add(node.getRight());
+                }
+                layerNodes.clear();
+                layerNodes.addAll(subLayerNodes);
+                subLayerNodes.clear();
+            }
+        }
+        return nodeList;
+    }
+
     private void prepareDFS(Node node){
         if (node == null)
             return;
@@ -46,5 +66,12 @@ public class BinaryTree <T>{
         this.dfsList = new ArrayList<>();
         this.prepareDFS(this.root);
         return this.dfsList;
+    }
+
+    public boolean isChild(Node root, Node searchNode){
+        boolean isExist = false;
+        List<Node> childNodes = this.getBFS(root);
+        for(Node node: childNodes) if(node.equals(searchNode)) isExist = true;
+        return isExist;
     }
 }

@@ -33,6 +33,10 @@ public class Node <T>{
         this.right = right;
     }
 
+    public boolean equals(Node otherNode){
+        return this.data.equals(otherNode.getData());
+    }
+
     @Override
     public String toString(){
         return this.data.toString();
