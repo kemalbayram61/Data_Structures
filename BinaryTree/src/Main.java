@@ -11,6 +11,7 @@ public class Main {
         binaryTree.getRoot().getRight().setLeft(new Node("Layer 2 Node 3"));
         binaryTree.getRoot().getRight().setRight(new Node("Layer 2 Node 4"));
 
-        System.out.println(binaryTree.getBFS().toString());
+        System.out.println("Breadth First Search : " + binaryTree.getBFS().toString());
+        System.out.println("Dept First Search : " + binaryTree.getDFS().toString());
     }
 }

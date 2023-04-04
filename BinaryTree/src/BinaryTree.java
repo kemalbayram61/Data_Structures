@@ -4,6 +4,8 @@ import java.util.List;
 public class BinaryTree <T>{
     private Node root;
 
+    private List<Node> dfsList;
+
     public Node getRoot() {
         return root;
     }
@@ -32,8 +34,17 @@ public class BinaryTree <T>{
         return nodeList;
     }
 
+    private void prepareDFS(Node node){
+        if (node == null)
+            return;
+        this.prepareDFS(node.getLeft());
+        this.dfsList.add(node);
+        this.prepareDFS(node.getRight());
+    }
+
     public List<Node> getDFS(){
-        List<Node> nodeList = new ArrayList<>();
-        return nodeList;
+        this.dfsList = new ArrayList<>();
+        this.prepareDFS(this.root);
+        return this.dfsList;
     }
 }
