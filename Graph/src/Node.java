@@ -43,5 +43,4 @@ public class Node <T>{
         this.childList.add(node);
     }
 
-
 }
