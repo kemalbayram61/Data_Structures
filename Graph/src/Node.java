@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Node <T>{
     private T data;
-    private double accessCost;
+    private List<Double> accessCostList;
     private List<Node> childList;
 
     public Node(T data){
@@ -27,12 +27,12 @@ public class Node <T>{
         this.childList = childList;
     }
 
-    public double getAccessCost() {
-        return accessCost;
+    public List<Double> getAccessCostList() {
+        return accessCostList;
     }
 
-    public void setAccessCost(double accessCost) {
-        this.accessCost = accessCost;
+    public void setAccessCostList(List<Double> accessCostList) {
+        this.accessCostList = accessCostList;
     }
 
     public void clearChildList(){
